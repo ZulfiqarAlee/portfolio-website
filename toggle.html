@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Toggle Example</title>
+    <style>
+        /* Add your styles for the menu and button here */
+        nav {
+            display: none; /* Hide the menu by default */
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        /* Add styles for your menu icons */
+        #menuIcon {
+            display: inline-block;
+        }
+
+        #closeIcon {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Include your menu icons, you can use any icon library or your own SVGs -->
+    <span id="menuIcon">☰</span>
+    <span id="closeIcon">×</span>
+
+    <nav>
+        <!-- Your navigation menu content goes here -->
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get references to the button, icons, and the navigation menu
+            const menuToggleBtn = document.getElementById("menuToggleBtn");
+            const menuIcon = document.getElementById("menuIcon");
+            const closeIcon = document.getElementById("closeIcon");
+            const nav = document.querySelector("nav");
+
+            // Add click event listener to the button
+            menuToggleBtn.addEventListener("click", function() {
+                // Toggle the visibility of the navigation menu
+                if (nav.style.display === "block") {
+                    nav.style.display = "none";
+                    menuIcon.style.display = "inline-block";
+                    closeIcon.style.display = "none";
+                } else {
+                    nav.style.display = "block";
+                    menuIcon.style.display = "none";
+                    closeIcon.style.display = "inline-block";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
